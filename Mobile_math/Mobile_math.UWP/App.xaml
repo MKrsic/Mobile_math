@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Mobile_math.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mobile_math.UWP"
+    RequestedTheme="Light">
+
+</Application>
