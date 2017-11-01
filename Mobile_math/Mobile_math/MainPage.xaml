@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Mobile_math"
              x:Class="Mobile_math.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Label x:Name="labelZadatak" FontSize="70"  HorizontalOptions="Center"></Label>
+        <Entry x:Name="entryAnswer" Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="20"/>
+        <Button x:Name="btnCheckAnswer" HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="CheckAnswer"></Button>
+    </StackLayout>
 </ContentPage>
