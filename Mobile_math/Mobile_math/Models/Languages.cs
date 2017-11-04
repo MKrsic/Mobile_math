@@ -10,8 +10,8 @@ namespace Mobile_math.Models
     {
         public class Croatian
         {
-            public string Answer = "Odgovor";
-            public string CheckAnswer = "Provjeri!";
+            public readonly string Answer = "Odgovor";
+            public readonly string CheckAnswer = "Provjeri!";
         }
 
     }
