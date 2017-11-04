@@ -22,12 +22,13 @@ namespace Mobile_math
             //localization setup
             entryAnswer.Placeholder = language.Answer;
             btnCheckAnswer.Text = language.CheckAnswer;
+            btnSettings.Text = language.Settings;
 
             //first task setup
             SetRandomZadatakDisplay();
         }
 
-        private void CheckAnswer(object sender, EventArgs e)
+        private void BtnCheckAnswer_Clicked(object sender, EventArgs e)
         {
             int answer = 0;
             Int32.TryParse(entryAnswer.Text, out answer);
@@ -42,6 +43,11 @@ namespace Mobile_math
                 DisplayAlert("", "Krivo!!!", "OK");
                 entryAnswer.Focus();
             }
+        }
+
+        private void BtnSettings_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingsPage());
         }
 
         private void SetRandomZadatakDisplay()

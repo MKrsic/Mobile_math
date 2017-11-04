@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App4"
+             x:Class="Mobile_math.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label x:Name="lblMinNum"></Label>
+                <Entry x:Name="entryMinNum"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="lblMaxNum"></Label>
+                <Entry x:Name="entryMaxNum"></Entry>
+            </StackLayout>
+            <Button x:Name="btnSave" Clicked="BtnSave_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

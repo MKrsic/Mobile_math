@@ -4,9 +4,10 @@
              xmlns:local="clr-namespace:Mobile_math"
              x:Class="Mobile_math.MainPage">
     <StackLayout>
+        <Button x:Name="btnSettings" HorizontalOptions="End" Clicked="BtnSettings_Clicked"></Button>
         <Label x:Name="labelZadatak" FontSize="70"  HorizontalOptions="Center"></Label>
         <Entry x:Name="entryAnswer" Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="20"/>
         <Button x:Name="btnCheckAnswer" HorizontalOptions="Center" VerticalOptions="Center"
-                Clicked="CheckAnswer"></Button>
+                Clicked="BtnCheckAnswer_Clicked"></Button>
     </StackLayout>
 </ContentPage>

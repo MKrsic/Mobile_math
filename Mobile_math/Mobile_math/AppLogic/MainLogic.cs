@@ -10,12 +10,18 @@ namespace Mobile_math.AppLogic
     class MainLogic
     {
         Zadatak zadatak = new Zadatak();
+        SettingsHandler settings = new SettingsHandler();
 
         public Zadatak RandomZadatak()
         {
             Random rand = new Random();
-            zadatak.X = rand.Next(0, 11);
-            zadatak.Y = rand.Next(0, 11);
+            int minNum = 0;
+            var tempMin = settings.GetData("MinimalNumber") != null ? Int32.TryParse(settings.GetData("MinimalNumber").ToString(), out minNum) : false;
+            int maxNum = 0;
+            var tempMax = settings.GetData("MaximalNumber") != null ? Int32.TryParse(settings.GetData("MaximalNumber").ToString(), out maxNum) : false;
+
+            zadatak.X = rand.Next(minNum, maxNum);
+            zadatak.Y = rand.Next(minNum, maxNum);
             zadatak.Result = zadatak.X + zadatak.Y; //TODO implementirati ostale operacije osim zbrajanja
             zadatak.ZadatakString = zadatak.X.ToString() + "+" + zadatak.Y.ToString();
             return zadatak;

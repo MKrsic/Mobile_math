@@ -12,6 +12,10 @@ namespace Mobile_math.Models
         {
             public readonly string Answer = "Odgovor";
             public readonly string CheckAnswer = "Provjeri!";
+            public readonly string Settings = "Postavke";
+            public readonly string MinimalNumber = "Od:";
+            public readonly string MaximalNumber = "Do:";
+            public readonly string Save = "Spremi";
         }
 
     }
