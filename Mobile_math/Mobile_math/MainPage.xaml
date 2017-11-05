@@ -7,6 +7,11 @@
         <Button x:Name="btnSettings" HorizontalOptions="End" Clicked="BtnSettings_Clicked"></Button>
         <Label x:Name="labelZadatak" FontSize="70"  HorizontalOptions="Center"></Label>
         <Entry x:Name="entryAnswer" Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="20"/>
+
+        <!--<Label x:Name="lblFirstNum" HorizontalTextAlignment="End" HorizontalOptions="Center" FontSize="15"></Label>
+        <Label x:Name="lblSecondNum" HorizontalTextAlignment="End" HorizontalOptions="Center" FontSize="15"></Label>
+        <Entry x:Name="entryAnswerRTL" Keyboard="Numeric" FontSize="15"/>-->
+
         <Button x:Name="btnCheckAnswer" HorizontalOptions="Center" VerticalOptions="Center"
                 Clicked="BtnCheckAnswer_Clicked"></Button>
     </StackLayout>

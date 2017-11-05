@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Mobile_math.Models;
 using Mobile_math.AppLogic;
@@ -20,9 +16,13 @@ namespace Mobile_math
             InitializeComponent();
 
             //localization setup
-            entryAnswer.Placeholder = language.Answer;
-            btnCheckAnswer.Text = language.CheckAnswer;
-            btnSettings.Text = language.Settings;
+            //entryAnswer.Placeholder = language.Answer;
+            //btnCheckAnswer.Text = language.CheckAnswer;
+            //btnSettings.Text = language.Settings;
+
+            entryAnswer.Placeholder = AppResources.Answer;
+            btnCheckAnswer.Text = AppResources.CheckAnswer;
+            btnSettings.Text = AppResources.Settings;
 
             //first task setup
             SetRandomZadatakDisplay();
@@ -50,12 +50,20 @@ namespace Mobile_math
             Navigation.PushAsync(new SettingsPage());
         }
 
+        protected override void OnAppearing()
+        {
+            SetRandomZadatakDisplay();
+        }
+
         private void SetRandomZadatakDisplay()
         {
             zadatak = mainLogic.RandomZadatak();
             labelZadatak.Text = zadatak.ZadatakString;
             entryAnswer.Text = "";
             entryAnswer.Focus();
+
+            //lblFirstNum.Text = zadatak.X.ToString();
+            //lblSecondNum.Text = zadatak.Y.ToString();
         }
     }
 }

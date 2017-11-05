@@ -23,9 +23,13 @@ namespace Mobile_math
             InitializeComponent();
 
             //localization setup
-            lblMinNum.Text= language.MinimalNumber;
-            lblMaxNum.Text = language.MaximalNumber;
-            btnSave.Text = language.Save;
+            //lblMinNum.Text= language.MinimalNumber;
+            //lblMaxNum.Text = language.MaximalNumber;
+            //btnSave.Text = language.Save;
+
+            lblMinNum.Text = AppResources.MinimalNumber;
+            lblMaxNum.Text = AppResources.MaximalNumber;
+            btnSave.Text = AppResources.Save;
 
             entryMinNum.Text = settings.GetData("MinimalNumber") != null ? settings.GetData("MinimalNumber").ToString() : "0";
             entryMaxNum.Text = settings.GetData("MaximalNumber") != null ? settings.GetData("MaximalNumber").ToString() : "0";
