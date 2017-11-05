@@ -7,11 +7,11 @@
         <StackLayout>
             <StackLayout>
                 <Label x:Name="lblMinNum"></Label>
-                <Entry x:Name="entryMinNum"></Entry>
+                <Entry x:Name="entryMinNum" Keyboard="Numeric"></Entry>
             </StackLayout>
             <StackLayout>
                 <Label x:Name="lblMaxNum"></Label>
-                <Entry x:Name="entryMaxNum"></Entry>
+                <Entry x:Name="entryMaxNum" Keyboard="Numeric"></Entry>
             </StackLayout>
             <Button x:Name="btnSave" Clicked="BtnSave_Clicked"></Button>
         </StackLayout>
