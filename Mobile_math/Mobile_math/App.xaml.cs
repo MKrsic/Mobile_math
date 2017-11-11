@@ -13,7 +13,6 @@ namespace Mobile_math
         {
             InitializeComponent();
 
-            //MainPage = new Mobile_math.MainPage();
             MainPage = new NavigationPage(new MainPage());
         }
 

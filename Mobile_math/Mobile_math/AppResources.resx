@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Zbrajanje</value>
+  </data>
+  <data name="AllowNegativeValues" xml:space="preserve">
+    <value>Negativne vrijednosti kod oduzimanja</value>
+  </data>
   <data name="Answer" xml:space="preserve">
     <value>Odgovor</value>
   </data>
   <data name="CheckAnswer" xml:space="preserve">
     <value>Provjeri!</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Dijeljenje</value>
   </data>
   <data name="MaximalNumber" xml:space="preserve">
     <value>Do:</value>
@@ -129,10 +138,16 @@
   <data name="MinimalNumber" xml:space="preserve">
     <value>Od:</value>
   </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Množenje</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Spremi</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Postavke</value>
+  </data>
+  <data name="Substract" xml:space="preserve">
+    <value>Oduzimanje</value>
   </data>
 </root>

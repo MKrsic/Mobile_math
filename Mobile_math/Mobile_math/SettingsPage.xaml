@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App4"
-             x:Class="Mobile_math.SettingsPage">
+             x:Class="Mobile_math.SettingsPage"
+             Padding="5">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -12,6 +13,37 @@
             <StackLayout>
                 <Label x:Name="lblMaxNum"></Label>
                 <Entry x:Name="entryMaxNum" Keyboard="Numeric"></Entry>
+                <!--<Slider></Slider>-->
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lblAdd" Grid.Row="0" Grid.Column="0"/>
+                    <Switch x:Name="checkAdd" Grid.Row="0" Grid.Column="1"></Switch>
+
+                    <Label x:Name="lblSubstract" Grid.Row="1" Grid.Column="0"/>
+                    <Switch x:Name="checkSubstract" Grid.Row="1" Grid.Column="1"></Switch>
+
+                    <Label x:Name="lblMultiply" Grid.Row="2" Grid.Column="0"/>
+                    <Switch x:Name="checkMultiply" Grid.Row="2" Grid.Column="1"></Switch>
+
+                    <Label x:Name="lblDivide" Grid.Row="3" Grid.Column="0"/>
+                    <Switch x:Name="checkDivide" Grid.Row="3" Grid.Column="1"></Switch>
+
+                    <Label x:Name="lblAllowNegativeValues" Grid.Row="4" Grid.Column="0"/>
+                    <Switch x:Name="checkAllowNegativeValues" Grid.Row="4" Grid.Column="1"></Switch>
+
+                </Grid>
             </StackLayout>
             <Button x:Name="btnSave" Clicked="BtnSave_Clicked"></Button>
         </StackLayout>

@@ -62,6 +62,24 @@ namespace Mobile_math {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zbrajanje.
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Negativne vrijednosti kod oduzimanja.
+        /// </summary>
+        internal static string AllowNegativeValues {
+            get {
+                return ResourceManager.GetString("AllowNegativeValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Odgovor.
         /// </summary>
         internal static string Answer {
@@ -76,6 +94,15 @@ namespace Mobile_math {
         internal static string CheckAnswer {
             get {
                 return ResourceManager.GetString("CheckAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dijeljenje.
+        /// </summary>
+        internal static string Divide {
+            get {
+                return ResourceManager.GetString("Divide", resourceCulture);
             }
         }
         
@@ -98,6 +125,15 @@ namespace Mobile_math {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Množenje.
+        /// </summary>
+        internal static string Multiply {
+            get {
+                return ResourceManager.GetString("Multiply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spremi.
         /// </summary>
         internal static string Save {
@@ -112,6 +148,15 @@ namespace Mobile_math {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oduzimanje.
+        /// </summary>
+        internal static string Substract {
+            get {
+                return ResourceManager.GetString("Substract", resourceCulture);
             }
         }
     }

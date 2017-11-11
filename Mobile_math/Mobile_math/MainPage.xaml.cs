@@ -7,7 +7,6 @@ namespace Mobile_math
 {
     public partial class MainPage : ContentPage
     {
-        Languages.Croatian language = new Languages.Croatian();
         MainLogic mainLogic = new MainLogic();
         Zadatak zadatak = new Zadatak();
 
@@ -16,15 +15,12 @@ namespace Mobile_math
             InitializeComponent();
 
             //localization setup
-            //entryAnswer.Placeholder = language.Answer;
-            //btnCheckAnswer.Text = language.CheckAnswer;
-            //btnSettings.Text = language.Settings;
-
             entryAnswer.Placeholder = AppResources.Answer;
             btnCheckAnswer.Text = AppResources.CheckAnswer;
             btnSettings.Text = AppResources.Settings;
-
-            //first task setup
+        }
+        protected override void OnAppearing()
+        {
             SetRandomZadatakDisplay();
         }
 
@@ -50,10 +46,6 @@ namespace Mobile_math
             Navigation.PushAsync(new SettingsPage());
         }
 
-        protected override void OnAppearing()
-        {
-            SetRandomZadatakDisplay();
-        }
 
         private void SetRandomZadatakDisplay()
         {
