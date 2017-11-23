@@ -32,11 +32,13 @@ namespace Mobile_math
             if (mainLogic.CheckAnswer(answer))
             {
                 DisplayAlert("", "Točno!!!", "OK");
+                //Navigation.PushAsync(new SettingsPage());
                 SetRandomZadatakDisplay();
             }
             else
             {
                 DisplayAlert("", "Krivo!!!", "OK");
+                //Navigation.PushAsync(new PopupCorrect());
                 entryAnswer.Focus();
             }
         }
