@@ -8,13 +8,6 @@ namespace Mobile_math.AppLogic
     {
         Zadatak zadatak = new Zadatak();
         SettingsHandler settings = new SettingsHandler();
-        enum Operations : int
-        {
-            Add = 1,
-            Substract = 2,
-            Multiply = 3,
-            Divide = 4
-        };
 
         public Zadatak RandomZadatak()
         {
@@ -38,11 +31,9 @@ namespace Mobile_math.AppLogic
                     zadatak.ZadatakString = zadatak.X.ToString() + "+" + zadatak.Y.ToString();
                     break;
                 case 2:
-                    if(zadatak.Y > zadatak.X && !allowNegativeValues)
+                    if (zadatak.Y > zadatak.X && !allowNegativeValues)
                     {
-                        var temp = zadatak.X;
-                        zadatak.X = zadatak.Y;
-                        zadatak.Y = temp;
+                        SwitchXandY();
                     }
                     zadatak.Result = zadatak.X - zadatak.Y;
                     zadatak.ZadatakString = zadatak.X.ToString() + "-" + zadatak.Y.ToString();
@@ -52,7 +43,7 @@ namespace Mobile_math.AppLogic
                     zadatak.ZadatakString = zadatak.X.ToString() + "*" + zadatak.Y.ToString();
                     break;
                 case 4:
-                    //NoDecimalDivision();
+                    NoDecimalDivision();
                     zadatak.Result = zadatak.X / zadatak.Y;
                     zadatak.ZadatakString = zadatak.X.ToString() + "/" + zadatak.Y.ToString();
                     break;
@@ -68,29 +59,30 @@ namespace Mobile_math.AppLogic
         //TODO: popraviti funkciju koja će osigurati da generirani brojevi za dijeljenje budu djeljivi tako da rezultat bude cjelobrojan
         private void NoDecimalDivision()
         {
-            var temp = Double.Parse(zadatak.X.ToString()) / Double.Parse(zadatak.Y.ToString());
+            Random rand = new Random();
+            int minNum = 0;
+            var tempMin = settings.GetData("MinimalNumber") != null ? Int32.TryParse(settings.GetData("MinimalNumber").ToString(), out minNum) : false;
+            int maxNum = 0;
+            var tempMax = settings.GetData("MaximalNumber") != null ? Int32.TryParse(settings.GetData("MaximalNumber").ToString(), out maxNum) : false;
 
-            var diff = Math.Abs(Math.Truncate(temp) - temp);
-            bool x = (diff > 0) && (diff < 1);
-            if (x)
+            zadatak.X = rand.Next(minNum, maxNum);
+            if (zadatak.X % zadatak.Y == 0) return;
+            do
             {
-                int minNum = 0;
-                var tempMin = settings.GetData("MinimalNumber") != null ? Int32.TryParse(settings.GetData("MinimalNumber").ToString(), out minNum) : false;
-                int maxNum = 0;
-                var tempMax = settings.GetData("MaximalNumber") != null ? Int32.TryParse(settings.GetData("MaximalNumber").ToString(), out maxNum) : false;
-
-                if (zadatak.X > minNum)
-                    zadatak.X--;
-                else if (zadatak.Y < maxNum)
-                    zadatak.Y++;
-                else if (zadatak.X == maxNum && zadatak.Y == maxNum)
-                {
-                    zadatak.X = maxNum;
-                    zadatak.Y = 1;
-                }
-
-                NoDecimalDivision();
+                zadatak.Y = zadatak.X * rand.Next(minNum, maxNum);
             }
+            while (zadatak.Y < minNum || zadatak.Y > maxNum);
+            if (zadatak.Y > zadatak.X)
+            {
+                SwitchXandY();
+            }
+        }
+
+        private void SwitchXandY()
+        {
+            var temp = zadatak.X;
+            zadatak.X = zadatak.Y;
+            zadatak.Y = temp;
         }
 
         private int RandomOperation()

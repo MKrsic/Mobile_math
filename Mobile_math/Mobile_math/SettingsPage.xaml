@@ -45,7 +45,7 @@
                     <Switch x:Name="checkAllowNegativeValues" Grid.Row="4" Grid.Column="1"/>
                 </Grid>
             </StackLayout>
-            <!--razmak-->
+            <Label></Label>
             <Button x:Name="btnSave" Clicked="BtnSave_Clicked" BackgroundColor="#81c784" TextColor="White" HeightRequest="40" WidthRequest="100" 
                     HorizontalOptions="Center" VerticalOptions="Center"></Button>
         </StackLayout>
