@@ -15,6 +15,7 @@ namespace Mobile_math
         int numOfCorrect = 0;
         int numOfWrong = 0;
         int tempWrong = 0;
+        int totalWrongCount = 0;
 
         public MainPage()
         {
@@ -33,6 +34,7 @@ namespace Mobile_math
             numOfTasks = settings.GetData("NumOfTasksInSeries") != null ? Int32.Parse(settings.GetData("NumOfTasksInSeries").ToString()) : 0;
         }
 
+        //TODO: popraviti broanje zadataka u seriji
         private void BtnCheckAnswer_Clicked(object sender, EventArgs e)
         {
             int answer = 0;
@@ -42,19 +44,24 @@ namespace Mobile_math
             {
                 DisplayAlert("", "Točno!!!", "OK");
                 SetRandomZadatakDisplay();
-                numOfCurrentTask++;
                 numOfCorrect++;
+                //if taks was first answered wrong, dont count it as correct
                 if (tempWrong < numOfWrong)
                 {
                     tempWrong = numOfWrong;
+                    totalWrongCount++;
                 }
                 else if (numOfCurrentTask >= numOfTasks)
                 {
-                    DisplayAlert("", "Točno: " + numOfCorrect.ToString() + " Krivo: " + numOfWrong, "OK");
+                    DisplayAlert("", "Točno: " + numOfCorrect.ToString() + " Krivo: " + totalWrongCount, "OK");
                     numOfCurrentTask = 0;
                     numOfCorrect = 0;
                     numOfWrong = 0;
+                    totalWrongCount = 0;
+                    tempWrong = 0;
+                    return;
                 }
+                numOfCurrentTask++;
             }
             else
             {
