@@ -14,7 +14,10 @@
             <StackLayout>
                 <Label x:Name="lblMaxNum"></Label>
                 <Entry x:Name="entryMaxNum" Keyboard="Numeric"></Entry>
-                <!--<Slider></Slider>-->
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="lblNumOfTasksInSeries"></Label>
+                <Entry x:Name="entryNumOfTasksInSeries" Keyboard="Numeric"></Entry>
             </StackLayout>
             <StackLayout>
                 <Grid>

@@ -29,11 +29,13 @@ namespace Mobile_math
             lblMultiply.Text = AppResources.Multiply;
             lblDivide.Text = AppResources.Divide;
             lblAllowNegativeValues.Text = AppResources.AllowNegativeValues;
+            lblNumOfTasksInSeries.Text = AppResources.NumberOfTasksInSeries;
 
             btnSave.Text = AppResources.Save;
 
             entryMinNum.Text = settings.GetData("MinimalNumber") != null ? settings.GetData("MinimalNumber").ToString() : "0";
             entryMaxNum.Text = settings.GetData("MaximalNumber") != null ? settings.GetData("MaximalNumber").ToString() : "0";
+            entryNumOfTasksInSeries.Text = settings.GetData("NumOfTasksInSeries") != null ? settings.GetData("NumOfTasksInSeries").ToString() : "0";
 
             checkAdd.IsToggled = settings.GetData("FuncAdd") != null ? Boolean.Parse(settings.GetData("FuncAdd").ToString()) : false;
             checkSubstract.IsToggled = settings.GetData("FuncSubstract") != null ? Boolean.Parse(settings.GetData("FuncSubstract").ToString()) : false;
@@ -52,6 +54,7 @@ namespace Mobile_math
         {
             settings.SaveData("MinimalNumber", Int32.Parse(entryMinNum.Text));
             settings.SaveData("MaximalNumber", Int32.Parse(entryMaxNum.Text));
+            settings.SaveData("NumOfTasksInSeries", Int32.Parse(entryNumOfTasksInSeries.Text));
 
             settings.SaveData("FuncAdd", checkAdd.IsToggled);
             settings.SaveData("FuncSubstract", checkSubstract.IsToggled);

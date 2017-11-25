@@ -134,6 +134,15 @@ namespace Mobile_math {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Broj zadataka u seriji:.
+        /// </summary>
+        internal static string NumberOfTasksInSeries {
+            get {
+                return ResourceManager.GetString("NumberOfTasksInSeries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spremi.
         /// </summary>
         internal static string Save {
@@ -148,6 +157,15 @@ namespace Mobile_math {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

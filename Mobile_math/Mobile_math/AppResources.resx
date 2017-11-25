@@ -141,11 +141,17 @@
   <data name="Multiply" xml:space="preserve">
     <value>Množenje</value>
   </data>
+  <data name="NumberOfTasksInSeries" xml:space="preserve">
+    <value>Broj zadataka u seriji:</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Spremi</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Postavke</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="Substract" xml:space="preserve">
     <value>Oduzimanje</value>
