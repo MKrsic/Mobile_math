@@ -150,10 +150,10 @@
   <data name="Settings" xml:space="preserve">
     <value>Postavke</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="Substract" xml:space="preserve">
     <value>Oduzimanje</value>
+  </data>
+  <data name="TaskNumber" xml:space="preserve">
+    <value>Zadatak </value>
   </data>
 </root>

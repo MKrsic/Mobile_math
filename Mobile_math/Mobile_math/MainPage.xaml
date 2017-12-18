@@ -5,7 +5,19 @@
              x:Class="Mobile_math.MainPage"
              BackgroundImage="Background.png">
     <StackLayout>
-        <Button x:Name="btnSettings" HorizontalOptions="End" Clicked="BtnSettings_Clicked"></Button>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label x:Name="labelTaskNum" HorizontalOptions="End" FontSize="35" Grid.Row="0" Grid.Column="0"></Label>
+            <Button x:Name="btnSettings" HorizontalOptions="End" Clicked="BtnSettings_Clicked" Grid.Row="0" Grid.Column="1"></Button>
+        </Grid>
+        <!--<Button x:Name="btnSettings" HorizontalOptions="End" Clicked="BtnSettings_Clicked"></Button>-->
         <Label x:Name="labelZadatak" FontSize="70"  HorizontalOptions="Center" Opacity="100"></Label>
         <Entry x:Name="entryAnswer" Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="26"/>
         <Button x:Name="btnCheckAnswer" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnCheckAnswer_Clicked"></Button>

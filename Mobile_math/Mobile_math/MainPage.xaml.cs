@@ -26,15 +26,16 @@ namespace Mobile_math
             btnCheckAnswer.Text = AppResources.CheckAnswer;
             btnSettings.Text = AppResources.Settings;
 
-            //numOfTasks = settings.GetData("NumOfTasksInSeries") != null ? Int32.Parse(settings.GetData("NumOfTasksInSeries").ToString()) : 0;
+            numOfTasks = settings.GetData("NumOfTasksInSeries") != null ? Int32.Parse(settings.GetData("NumOfTasksInSeries").ToString()) : 0;
+            SetTaskNumDisplay(1);
         }
         protected override void OnAppearing()
         {
             SetRandomZadatakDisplay();
+            SetTaskNumDisplay(1);
             numOfTasks = settings.GetData("NumOfTasksInSeries") != null ? Int32.Parse(settings.GetData("NumOfTasksInSeries").ToString()) : 0;
         }
 
-        //TODO: popraviti broanje zadataka u seriji
         private void BtnCheckAnswer_Clicked(object sender, EventArgs e)
         {
             int answer = 0;
@@ -42,26 +43,36 @@ namespace Mobile_math
 
             if (mainLogic.CheckAnswer(answer))
             {
-                DisplayAlert("", "Točno!!!", "OK");
-                SetRandomZadatakDisplay();
                 numOfCorrect++;
+
                 //if taks was first answered wrong, dont count it as correct
                 if (tempWrong < numOfWrong)
                 {
                     tempWrong = numOfWrong;
                     totalWrongCount++;
                 }
+                //if all tasks in series are solved, show final message
                 else if (numOfCurrentTask >= numOfTasks)
                 {
-                    DisplayAlert("", "Točno: " + numOfCorrect.ToString() + " Krivo: " + totalWrongCount, "OK");
-                    numOfCurrentTask = 0;
+                    //DisplayAlert("", "Točno: " + numOfCorrect.ToString() + " Krivo: " + totalWrongCount, "OK");
+                    DisplayAlert("", "Točno riješeni svi zadatci, a od toga " + (numOfTasks - totalWrongCount) + " od prve.", "OK");
+                    ////--
+                    //var modalPage = new PopupCorrect();
+                    //Navigation.PushModalAsync(modalPage);
+                    ////--
+                    numOfCurrentTask = 1;
                     numOfCorrect = 0;
                     numOfWrong = 0;
                     totalWrongCount = 0;
                     tempWrong = 0;
+                    SetRandomZadatakDisplay();
+                    SetTaskNumDisplay(1);
                     return;
                 }
+                DisplayAlert("", "Točno!!!", "OK");
+                SetRandomZadatakDisplay();
                 numOfCurrentTask++;
+                SetTaskNumDisplay(numOfCurrentTask);
             }
             else
             {
@@ -76,13 +87,19 @@ namespace Mobile_math
             Navigation.PushAsync(new SettingsPage());
         }
 
-
         private void SetRandomZadatakDisplay()
         {
+            if (numOfCurrentTask == 1)
+                SetTaskNumDisplay(numOfCurrentTask);
             zadatak = mainLogic.RandomZadatak();
             labelZadatak.Text = zadatak.ZadatakString;
             entryAnswer.Text = "";
             entryAnswer.Focus();
+        }
+
+        private void SetTaskNumDisplay(int taskNum)
+        {
+            labelTaskNum.Text = AppResources.TaskNumber + taskNum.ToString() + "/" + numOfTasks.ToString();
         }
     }
 }

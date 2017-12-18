@@ -161,20 +161,20 @@ namespace Mobile_math {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Oduzimanje.
         /// </summary>
         internal static string Substract {
             get {
                 return ResourceManager.GetString("Substract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadatak .
+        /// </summary>
+        internal static string TaskNumber {
+            get {
+                return ResourceManager.GetString("TaskNumber", resourceCulture);
             }
         }
     }
