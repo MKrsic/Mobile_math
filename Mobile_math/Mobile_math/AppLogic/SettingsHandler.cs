@@ -45,6 +45,18 @@ namespace Mobile_math.AppLogic
                 return false;
             }
         }
+        public bool SaveData(string dataName, List<string> data)
+        {
+            try
+            {
+                Application.Current.Properties[dataName] = data;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public object GetData(string dataName)
         {

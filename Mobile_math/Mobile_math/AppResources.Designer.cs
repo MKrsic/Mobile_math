@@ -98,6 +98,15 @@ namespace Mobile_math {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Točno!!!.
+        /// </summary>
+        internal static string Correct {
+            get {
+                return ResourceManager.GetString("Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dijeljenje.
         /// </summary>
         internal static string Divide {
@@ -170,11 +179,29 @@ namespace Mobile_math {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Točno riješeni svi zadatci, a od toga {0} od {1} od prve.{2}{3}.
+        /// </summary>
+        internal static string SummaryMessage {
+            get {
+                return ResourceManager.GetString("SummaryMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zadatak .
         /// </summary>
         internal static string TaskNumber {
             get {
                 return ResourceManager.GetString("TaskNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Krivo!!!.
+        /// </summary>
+        internal static string Wrong {
+            get {
+                return ResourceManager.GetString("Wrong", resourceCulture);
             }
         }
     }

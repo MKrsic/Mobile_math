@@ -129,6 +129,9 @@
   <data name="CheckAnswer" xml:space="preserve">
     <value>Provjeri!</value>
   </data>
+  <data name="Correct" xml:space="preserve">
+    <value>Točno!!!</value>
+  </data>
   <data name="Divide" xml:space="preserve">
     <value>Dijeljenje</value>
   </data>
@@ -153,7 +156,13 @@
   <data name="Substract" xml:space="preserve">
     <value>Oduzimanje</value>
   </data>
+  <data name="SummaryMessage" xml:space="preserve">
+    <value>Točno riješeni svi zadatci, a od toga {0} od {1} od prve.{2}{3}</value>
+  </data>
   <data name="TaskNumber" xml:space="preserve">
     <value>Zadatak </value>
+  </data>
+  <data name="Wrong" xml:space="preserve">
+    <value>Krivo!!!</value>
   </data>
 </root>

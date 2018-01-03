@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Mobile_math.Models;
 using Mobile_math.AppLogic;
+using System.Collections.Generic;
 
 namespace Mobile_math
 {
@@ -16,6 +17,9 @@ namespace Mobile_math
         int numOfWrong = 0;
         int tempWrong = 0;
         int totalWrongCount = 0;
+
+        List<string> QA = new List<string>();
+
 
         public MainPage()
         {
@@ -44,22 +48,25 @@ namespace Mobile_math
             if (mainLogic.CheckAnswer(answer))
             {
                 numOfCorrect++;
+                QA.Add(zadatak.ZadatakString + "= " + entryAnswer.Text + " \u221A");
 
                 //if taks was first answered wrong, dont count it as correct
                 if (tempWrong < numOfWrong)
                 {
                     tempWrong = numOfWrong;
                     totalWrongCount++;
+                    QA[QA.Count - 1] = zadatak.ZadatakString + "= " + entryAnswer.Text;
                 }
                 //if all tasks in series are solved, show final message
-                else if (numOfCurrentTask >= numOfTasks)
+                if (numOfCurrentTask >= numOfTasks)
                 {
-                    //DisplayAlert("", "Točno: " + numOfCorrect.ToString() + " Krivo: " + totalWrongCount, "OK");
-                    DisplayAlert("", "Točno riješeni svi zadatci, a od toga " + (numOfTasks - totalWrongCount) + " od prve.", "OK");
-                    ////--
-                    //var modalPage = new PopupCorrect();
-                    //Navigation.PushModalAsync(modalPage);
-                    ////--
+                    string QAString = "";
+                    foreach (var QA in QA)
+                    {
+                        QAString = QAString + QA + "\n";
+                    }
+                    QA.Clear();
+                    DisplayAlert("", String.Format(AppResources.SummaryMessage, (numOfTasks - totalWrongCount), numOfTasks, "\n" ,QAString), "OK");
                     numOfCurrentTask = 1;
                     numOfCorrect = 0;
                     numOfWrong = 0;
@@ -67,16 +74,17 @@ namespace Mobile_math
                     tempWrong = 0;
                     SetRandomZadatakDisplay();
                     SetTaskNumDisplay(1);
+
                     return;
                 }
-                DisplayAlert("", "Točno!!!", "OK");
+                DisplayAlert("", AppResources.Correct, "OK");
                 SetRandomZadatakDisplay();
                 numOfCurrentTask++;
                 SetTaskNumDisplay(numOfCurrentTask);
             }
             else
             {
-                DisplayAlert("", "Krivo!!!", "OK");
+                DisplayAlert("", AppResources.Wrong, "OK");
                 entryAnswer.Focus();
                 numOfWrong++;
             }
