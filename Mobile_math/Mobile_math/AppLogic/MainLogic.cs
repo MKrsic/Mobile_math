@@ -9,6 +9,10 @@ namespace Mobile_math.AppLogic
         Zadatak zadatak = new Zadatak();
         SettingsHandler settings = new SettingsHandler();
 
+        /// <summary>
+        /// Generates random task
+        /// </summary>
+        /// <returns></returns>
         public Zadatak RandomZadatak()
         {
             Random rand = new Random();
@@ -56,7 +60,9 @@ namespace Mobile_math.AppLogic
             return zadatak;
         }
 
-        //TODO: popraviti funkciju koja će osigurati da generirani brojevi za dijeljenje budu djeljivi tako da rezultat bude cjelobrojan
+        /// <summary>
+        /// Ensures that generated task has no decimal values after division
+        /// </summary>
         private void NoDecimalDivision()
         {
             Random rand = new Random();
@@ -78,6 +84,9 @@ namespace Mobile_math.AppLogic
             }
         }
 
+        /// <summary>
+        /// Switches X and Y value
+        /// </summary>
         private void SwitchXandY()
         {
             var temp = zadatak.X;
@@ -85,6 +94,10 @@ namespace Mobile_math.AppLogic
             zadatak.Y = temp;
         }
 
+        /// <summary>
+        /// Generates random math operation
+        /// </summary>
+        /// <returns></returns>
         private int RandomOperation()
         {
             bool add = settings.GetData("FuncAdd") != null ? Boolean.Parse(settings.GetData("FuncAdd").ToString()) : false;
@@ -113,6 +126,11 @@ namespace Mobile_math.AppLogic
             return operation;
         }
 
+        /// <summary>
+        /// Cheks if submited answer is correct
+        /// </summary>
+        /// <param name="answer"></param>
+        /// <returns>True if answer is correct, false if not</returns>
         public bool CheckAnswer(int answer)
         {
             if (answer == zadatak.Result)

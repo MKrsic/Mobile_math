@@ -48,7 +48,6 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Languages.cs" />
     <Compile Include="Models\Zadatak.cs" />
     <Compile Include="PopupCorrect.xaml.cs">
       <DependentUpon>PopupCorrect.xaml</DependentUpon>

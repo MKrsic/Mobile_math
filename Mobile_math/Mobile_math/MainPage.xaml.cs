@@ -11,15 +11,34 @@ namespace Mobile_math
         MainLogic mainLogic = new MainLogic();
         Zadatak zadatak = new Zadatak();
         SettingsHandler settings = new SettingsHandler();
+        /// <summary>
+        /// Number of current task
+        /// </summary>
         int numOfCurrentTask = 1;
+        /// <summary>
+        /// Total number of tasks in series
+        /// </summary>
         int numOfTasks = 0;
+        /// <summary>
+        /// Total number of correct answers
+        /// </summary>
         int numOfCorrect = 0;
+        /// <summary>
+        /// Number of wrong answers
+        /// </summary>
         int numOfWrong = 0;
+        /// <summary>
+        /// Temporary number of wrong answers for detection of multiple answers on same question
+        /// </summary>
         int tempWrong = 0;
+        /// <summary>
+        /// Total number of wrong answers
+        /// </summary>
         int totalWrongCount = 0;
-
+        /// <summary>
+        /// List of all generated tasks used for display after finishing task series
+        /// </summary>
         List<string> QA = new List<string>();
-
 
         public MainPage()
         {
@@ -95,6 +114,9 @@ namespace Mobile_math
             Navigation.PushAsync(new SettingsPage());
         }
 
+        /// <summary>
+        /// Displays random task
+        /// </summary>
         private void SetRandomZadatakDisplay()
         {
             if (numOfCurrentTask == 1)
@@ -105,6 +127,10 @@ namespace Mobile_math
             entryAnswer.Focus();
         }
 
+        /// <summary>
+        /// Displays number of current task
+        /// </summary>
+        /// <param name="taskNum"></param>
         private void SetTaskNumDisplay(int taskNum)
         {
             labelTaskNum.Text = AppResources.TaskNumber + taskNum.ToString() + "/" + numOfTasks.ToString();
