@@ -197,7 +197,7 @@ namespace Mobile_math {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Krivo!!!.
+        ///   Looks up a localized string similar to Netočno, pokušajte ponovno..
         /// </summary>
         internal static string Wrong {
             get {

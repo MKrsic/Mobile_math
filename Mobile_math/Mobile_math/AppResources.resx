@@ -163,6 +163,6 @@
     <value>Zadatak </value>
   </data>
   <data name="Wrong" xml:space="preserve">
-    <value>Krivo!!!</value>
+    <value>Netočno, pokušajte ponovno.</value>
   </data>
 </root>

@@ -55,7 +55,7 @@ namespace Mobile_math
         protected override void OnAppearing()
         {
             SetRandomZadatakDisplay();
-            SetTaskNumDisplay(1);
+            SetTaskNumDisplay(numOfCurrentTask);
             numOfTasks = settings.GetData("NumOfTasksInSeries") != null ? Int32.Parse(settings.GetData("NumOfTasksInSeries").ToString()) : 0;
         }
 
